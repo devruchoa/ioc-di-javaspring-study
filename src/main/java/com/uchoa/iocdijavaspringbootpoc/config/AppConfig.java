@@ -16,7 +16,7 @@ public class AppConfig {
     // DI via constructor
     @Bean
     public A a(B b) {
-        return new A();
+        return new A(b);
     }
 
     // DI via setter
