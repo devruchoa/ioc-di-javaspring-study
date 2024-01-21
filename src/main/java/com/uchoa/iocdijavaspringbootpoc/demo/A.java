@@ -1,4 +1,4 @@
-package com.uchoa.iocdijavaspringbootpoc.util;
+package com.uchoa.iocdijavaspringbootpoc.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -6,18 +6,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class A {
 
-    // DI via campo
+    private final B b;
+
     @Autowired
-    private B b;
-
-    public A() {
-    }
-
     public A(B b) {
         this.b = b;
     }
 
-    public void setB(B b) {
-        this.b = b;
+    public String useB() {
+        return b.message();
     }
 }
